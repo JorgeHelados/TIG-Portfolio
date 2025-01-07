@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>Práctica 3 - PDF Navegable</title>
+        
+        <!-- CSS -->
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/simplegrid.css">
+        <link rel="stylesheet" href="../css/icomoon.css">
+        <link rel="stylesheet" href="../css/lightcase.css">
+        <link rel="stylesheet" href="../style.css">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+        <style>
+            body {
+                background: url('../images/home.jpg') no-repeat center center fixed;
+                background-size: cover;
+                margin: 0;
+                padding: 0;
+            }
+
+            .image-viewer {
+                position: relative;
+                text-align: center;
+                height: calc(100vh - 100px);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column; /* Stack elements vertically */
+                padding: 100px 20px 20px 20px; /* Add top padding to prevent overlap */
+                margin-bottom: 150px;
+                margin-top: 0px;
+            }
+
+            .image-viewer h1 {
+                margin-bottom: 20px; /* Add space below the title */
+                font-size: 2rem;
+                color: #333;
+            }
+
+            .image-viewer img {
+                max-width: 120%;
+                max-height: 120%;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            }
+        </style>
+    </head>
+    <body id="home">
+        <!-- Header -->
+        <header id="top-header" class="header-home">
+            <div class="grid">
+                <div class="col-1-1">
+                    <div class="content">
+                        <div class="logo-wrap">
+                            <a href="#" class="logo"></a>
+                        </div>
+                        <nav class="navigation">
+                            <input type="checkbox" id="nav-button">
+                            <label for="nav-button" onclick></label>
+                            <ul class="nav-container">
+                                <li><a href="practica1.html">Practica 1</a></li>
+                                <li><a href="practica3.html">Practica 3</a></li>
+                                <li><a href="practica4.html">Practica 4</a></li>
+                                <li><a href="practica7.html">Practica 7</a></li>
+                                <li><a href="practica8.html">Practica 8</a></li>
+                                <li><a href="practica9.html">Practica 9</a></li>
+                                <li><a href="practica10.html">Practica 10</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- End Header -->
+
+        <!-- Image Viewer -->
+        <div class="image-viewer">
+            <br>
+            <br>
+            <br>
+            <h1>Práctica 3</h1>
+            <img src="../images/Practica1.jpg" alt="Imagen de Práctica 1">
+        </div>
+        <!-- End Image Viewer -->
+
+        <!-- Footer -->
+        <footer class="wrap">
+            <div class="content">
+                <p class="footer-text">© 2025 | Jaime Sanchez, Adrian Van Doxhoorn y Jorge Satorres</p>
+            </div>
+        </footer>
+        <!-- End Footer -->
+
+        <!-- JS -->
+        <script src="../js/jquery.js"></script>
+        <script src="../js/main.js"></script>
+    </body>
+</html>
