@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>Práctica 8 - Viewer</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/simplegrid.css">
+        <link rel="stylesheet" href="../css/icomoon.css">
+        <link rel="stylesheet" href="../css/lightcase.css">
+        <link rel="stylesheet" href="../style.css">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+        <style>
+            body {
+                background: url('../images/home.jpg') no-repeat center center fixed;
+                background-size: cover;
+                margin: 0;
+                padding: 0;
+            }
+
+            .viewer {
+                position: relative;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+                gap: 20px;
+            }
+
+            .viewer h1 {
+                padding-top: 40px;
+                margin-bottom: 20px;
+                font-size: 2rem;
+                color: whitesmoke;
+            }
+
+            .viewer iframe {
+                width: 90%;
+                height:90vh;
+                border: none;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                background-color: whitesmoke;
+            }
+        </style>
+    </head>
+    <body id="home">
+        <!-- Header -->
+        <header id="top-header" class="header-home">
+            <div class="grid">
+                <div class="col-1-1">
+                    <div class="content">
+                        <div class="logo-wrap">
+                            <a href="#" class="logo"></a>
+                        </div>
+                        <nav class="navigation">
+                            <input type="checkbox" id="nav-button">
+                            <label for="nav-button" onclick></label>
+                            <ul class="nav-container">
+                                <li><a href="practica1.html">Practica 1</a></li>
+                                <li><a href="practica3.html">Practica 3</a></li>
+                                <li><a href="practica4.html">Practica 4</a></li>
+                                <li><a href="practica7.html">Practica 7</a></li>
+                                <li><a href="practica8.html">Practica 8</a></li>
+                                <li><a href="practica9.html">Practica 9</a></li>
+                                <li><a href="practica10.html">Practica 10</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- End Header -->
+
+        <!-- Viewer -->
+        <div class="viewer">
+            <h1>Práctica 8</h1>
+            <!-- Display HTMLs in Column -->
+            <iframe src="../content/Prac8/Accidentes.html" allowfullscreen></iframe>
+            <iframe src="../content/Prac8/contenedores.html" allowfullscreen></iframe>
+        </div>
+        <!-- End Viewer -->
+
+        <!-- Footer -->
+        <footer class="wrap">
+            <div class="content">
+                <p class="footer-text">© 2025 | Jaime Sanchez, Adrian Van Doxhoorn y Jorge Satorres</p>
+            </div>
+        </footer>
+        <!-- End Footer -->
+
+        <!-- JS -->
+        <script src="../js/jquery.js"></script>
+        <script src="../js/main.js"></script>
+    </body>
+</html>
