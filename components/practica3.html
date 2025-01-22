@@ -24,28 +24,27 @@
                 padding: 0;
             }
 
-            .image-viewer {
+            .pdf-viewer {
                 position: relative;
                 text-align: center;
-                height: calc(100vh - 100px);
+                height: 130vh;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                flex-direction: column; /* Stack elements vertically */
-                padding: 100px 20px 20px 20px; /* Add top padding to prevent overlap */
-                margin-bottom: 150px;
-                margin-top: 0px;
+                flex-direction: column;
+                padding: 20px 20px 20px 20px;
             }
 
-            .image-viewer h1 {
-                margin-bottom: 20px; /* Add space below the title */
+            .pdf-viewer h1 {
+                margin-bottom: 20px;
                 font-size: 2rem;
-                color: #333;
+                color: whitesmoke;
             }
 
-            .image-viewer img {
-                max-width: 120%;
-                max-height: 120%;
+            .pdf-viewer iframe {
+                width: 90%;
+                height: 100vh;
+                border: none;
                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             }
         </style>
@@ -78,15 +77,12 @@
         </header>
         <!-- End Header -->
 
-        <!-- Image Viewer -->
-        <div class="image-viewer">
-            <br>
-            <br>
-            <br>
+        <!-- PDF Viewer -->
+        <div class="pdf-viewer">
             <h1>Práctica 3</h1>
-            <img src="../images/Practica1.jpg" alt="Imagen de Práctica 1">
+            <iframe src="../content/Prac3/PRECIPITACIONES_Y_TEMPERATURA.pdf" allowfullscreen></iframe>
         </div>
-        <!-- End Image Viewer -->
+        <!-- End PDF Viewer -->
 
         <!-- Footer -->
         <footer class="wrap">

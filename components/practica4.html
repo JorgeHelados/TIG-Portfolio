@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>Webmap Viewer - Shapefile</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/simplegrid.css">
+        <link rel="stylesheet" href="../css/icomoon.css">
+        <link rel="stylesheet" href="../css/lightcase.css">
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+        <style>
+            body {
+                background: url('../images/home.jpg') no-repeat center center fixed;
+                background-size: cover;
+                margin: 0;
+                padding: 0;
+            }
+
+            .map-viewer {
+                position: relative;
+                text-align: center;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .map-viewer h1 {
+                margin-bottom: 20px;
+                font-size: 2rem;
+                color: whitesmoke;
+            }
+
+            #map {
+                width: 90%;
+                height: 80vh;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            }
+        </style>
+    </head>
+    <body id="home">
+        <!-- Header -->
+        <header id="top-header" class="header-home">
+            <div class="grid">
+                <div class="col-1-1">
+                    <div class="content">
+                        <div class="logo-wrap">
+                            <a href="#" class="logo"></a>
+                        </div>
+                        <nav class="navigation">
+                            <input type="checkbox" id="nav-button">
+                            <label for="nav-button" onclick></label>
+                            <ul class="nav-container">
+                                <li><a href="practica1.html">Practica 1</a></li>
+                                <li><a href="practica3.html">Practica 3</a></li>
+                                <li><a href="practica4.html">Practica 4</a></li>
+                                <li><a href="practica7.html">Practica 7</a></li>
+                                <li><a href="practica8.html">Practica 8</a></li>
+                                <li><a href="practica9.html">Practica 9</a></li>
+                                <li><a href="practica10.html">Practica 10</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- End Header -->
+
+        <!-- Map Viewer -->
+        <div class="map-viewer">
+            <h1>Webmap Viewer</h1>
+            <div id="map"></div>
+        </div>
+        <!-- End Map Viewer -->
+
+        <!-- Footer -->
+        <footer class="wrap">
+            <div class="content">
+                <p class="footer-text">© 2025 | Jaime Sanchez, Adrian Van Doxhoorn y Jorge Satorres</p>
+            </div>
+        </footer>
+        <!-- End Footer -->
+
+        <!-- JS -->
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <script src="https://unpkg.com/shpjs/dist/shp.min.js"></script>
+        <script>
+            // Initialize the map
+            var map = L.map('map').setView([0, 0], 2);
+
+            // Add a tile layer (OpenStreetMap)
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+
+            // Load and display shapefile
+            var shpFilePath = '../content/Prac4/prac4.zip'; // Path to your shapefile ZIP
+            fetch(shpFilePath)
+                .then(response => response.arrayBuffer())
+                .then(buffer => shp(buffer)) // Parse shapefile using shp.js
+                .then(geojson => {
+                    L.geoJSON(geojson).addTo(map); // Add GeoJSON to the map
+                    map.fitBounds(L.geoJSON(geojson).getBounds()); // Adjust map to bounds of the shapefile
+                })
+                .catch(error => console.error('Error loading shapefile:', error));
+        </script>
+    </body>
+</html>
