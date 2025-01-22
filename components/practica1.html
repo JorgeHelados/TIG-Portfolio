@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title>Práctica 1 - Imagen Navegable</title>
-        
+
         <!-- CSS -->
         <link rel="stylesheet" href="../css/reset.css">
         <link rel="stylesheet" href="../css/simplegrid.css">
@@ -24,28 +24,27 @@
                 padding: 0;
             }
 
-            .image-viewer {
+            .viewer {
                 position: relative;
                 text-align: center;
-                height: calc(100vh - 100px);
                 display: flex;
+                flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                flex-direction: column; /* Stack elements vertically */
-                padding: 100px 20px 20px 20px; /* Add top padding to prevent overlap */
-                margin-bottom: 150px;
-                margin-top: 0px;
+                padding: 20px;
+                gap: 20px;
             }
 
-            .image-viewer h1 {
-                margin-bottom: 20px; /* Add space below the title */
+            .viewer h1 {
+                margin-top: -15px;
+                margin-bottom: 20px;
                 font-size: 2rem;
                 color: whitesmoke;
             }
 
-            .image-viewer img {
-                max-width: 120%;
-                max-height: 120%;
+            .viewer img {
+                max-width: 90%;
+                max-height: 80vh;
                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             }
         </style>
@@ -78,16 +77,12 @@
         </header>
         <!-- End Header -->
 
-        <!-- Image Viewer -->
-        <div class="image-viewer">
-            <br>
-            <br>
-            <br>
-            <br>
+        <!-- Viewer -->
+        <div class="viewer">
             <h1>Práctica 1</h1>
             <img src="../content/Prac1/practica1.jpg" alt="Imagen de Práctica 1">
         </div>
-        <!-- End Image Viewer -->
+        <!-- End Viewer -->
 
         <!-- Footer -->
         <footer class="wrap">
