@@ -16,9 +16,55 @@
         <link rel="stylesheet" href="style.css">
 
         <!-- Google Fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
+        <style>
+            body {
+                background: url('images/home.jpg') no-repeat center center fixed;
+                background-size: cover;
+                margin: 0;
+                padding: 0;
+            }
+
+            header {
+                position: relative;
+                padding: 20px 0;
+                z-index: 10;
+                color: whitesmoke;
+            }
+
+            .nav-container {
+                list-style: none;
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                margin: 0;
+                padding: 0;
+            }
+
+            .nav-container li {
+                display: inline;
+            }
+
+            .nav-container li a {
+                text-decoration: none;
+                color: whitesmoke;
+                font-weight: bold;
+            }
+
+            .parallax-section {
+                margin-top: 0; /* Ensure smooth transition from header to content */
+                color: whitesmoke;
+            }
+
+            /* Responsive adjustments */
+            @media (max-width: 768px) {
+                .nav-container {
+                    flex-direction: column;
+                }
+            }
+        </style>
     </head>
     <body id="home">
         <!-- Header -->
@@ -27,7 +73,7 @@
                 <div class="col-1-1">
                     <div class="content">
                         <div class="logo-wrap">
-                            <a href="" class="logo"></a>
+                            <a href="#" class="logo"></a>
                         </div>
                         <nav class="navigation">
                             <input type="checkbox" id="nav-button">
@@ -46,14 +92,13 @@
                 </div>
             </div>
         </header>
-        
         <!-- End Header -->
 
         <!-- Parallax Section -->
         <div class="parallax-section parallax1">
             <div class="grid grid-pad">
                 <div class="col-1-1">
-                     <div class="content content-header" >
+                     <div class="content content-header">
                         <h2>We Are Creative Design Agency</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, fuga, consectetur sequi consequuntur nisi placeat ullam maiores perferendis. Quod, nihil reiciendis saepe optio libero minus et beatae ipsam reprehenderit sequi.</p>
                         <a target="_blank" class="btn btn-ghost" href="#">Find Out More</a>
