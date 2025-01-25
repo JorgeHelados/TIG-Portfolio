@@ -25,6 +25,51 @@
                 padding: 0;
             }
 
+            header {
+                position: relative;
+                padding: 20px 0;
+                z-index: 10;
+                color: whitesmoke;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .logo-wrap {
+                display: flex;
+                align-items: center;
+                margin-left: 20px;
+            }
+
+            .logo-wrap img {
+                max-width: 90px;
+                height: auto;
+                display: block;
+                margin-top: -15px;
+            }
+
+            .navigation {
+                margin-right: 20px;
+            }
+
+            .nav-container {
+                list-style: none;
+                display: flex;
+                gap: 15px;
+                margin: 0;
+                padding: 0;
+            }
+
+            .nav-container li {
+                display: inline;
+            }
+
+            .nav-container li a {
+                text-decoration: none;
+                color: whitesmoke;
+                font-weight: bold;
+            }
+
             .viewer {
                 position: relative;
                 text-align: center;
@@ -54,29 +99,23 @@
     <body id="home">
         <!-- Header -->
         <header id="top-header" class="header-home">
-            <div class="grid">
-                <div class="col-1-1">
-                    <div class="content">
-                        <div class="logo-wrap">
-                            <a href="#" class="logo"></a>
-                        </div>
-                        <nav class="navigation">
-                            <input type="checkbox" id="nav-button">
-                            <label for="nav-button" onclick></label>
-                            <ul class="nav-container">
-                                <li><a href="practica1.html">Practica 1</a></li>
-                                <li><a href="practica3.html">Practica 3</a></li>
-                                <li><a href="practica4.html">Practica 4</a></li>
-                                <li><a href="practica7.html">Practica 7</a></li>
-                                <li><a href="practica8.html">Practica 8</a></li>
-                                <li><a href="practica9.html">Practica 9</a></li>
-                                <li><a href="practica10.html">Practica 10</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
+            <div class="logo-wrap">
+                <a href="../index.html" class="logo"><img src="../images/gti.png" alt="Logo"></a>
             </div>
-        </header>
+            <nav class="navigation">
+                <input type="checkbox" id="nav-button">
+                <label for="nav-button" onclick></label>
+                <ul class="nav-container">
+                    <li><a href="practica1.html">Practica 1</a></li>
+                    <li><a href="practica3.html">Practica 3</a></li>
+                    <li><a href="practica4.html">Practica 4</a></li>
+                    <li><a href="practica7.html">Practica 7</a></li>
+                    <li><a href="practica8.html">Practica 8</a></li>
+                    <li><a href="practica9.html">Practica 9</a></li>
+                    <li><a href="practica10.html">Practica 10</a></li>
+                </ul>
+            </nav>
+        </header>        
         <!-- End Header -->
 
         <!-- Viewer -->
