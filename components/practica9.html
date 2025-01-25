@@ -109,41 +109,46 @@
         <!-- End Footer -->
 
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-<script src="https://unpkg.com/georaster"></script>
-<script src="https://unpkg.com/proj4"></script>
-<script src="https://unpkg.com/georaster-layer-for-leaflet"></script>
+        <script src="https://unpkg.com/georaster"></script>
+        <script src="https://unpkg.com/proj4"></script>
+        <script src="https://unpkg.com/georaster-layer-for-leaflet"></script>
 
-<script>
-  // Initialize the map
-  const map = L.map('map1').setView([0, 0], 2);
+        <script>
+        // Function to initialize a map and load a GeoTIFF
+        function initializeMap(mapId, geotiffUrl) {
+            const map = L.map(mapId).setView([0, 0], 2);
 
-  // Add a basemap
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
+            // Add a basemap
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
 
-  // Path to the local GeoTIFF file
-  const geotiffUrl = '../content/Prac9/van_Dixhoorn_NBR_post.tif'; // Archivo local en el mismo directorio
+            // Fetch and load the GeoTIFF file
+            fetch(geotiffUrl)
+                .then(response => response.arrayBuffer())
+                .then(async arrayBuffer => {
+                    const georaster = await parseGeoraster(arrayBuffer);
 
-  // Fetch and load the GeoTIFF file
-  fetch(geotiffUrl)
-    .then(response => response.arrayBuffer())
-    .then(async arrayBuffer => {
-      const georaster = await parseGeoraster(arrayBuffer);
+                    const layer = new GeoRasterLayer({
+                        georaster,
+                        opacity: 0.7,
+                        resolution: 256 // Optional
+                    });
 
-      const layer = new GeoRasterLayer({
-        georaster,
-        opacity: 0.7,
-        resolution: 256 // Optional
-      });
+                    map.addLayer(layer);
+                    map.fitBounds(layer.getBounds());
+                })
+                .catch(error => {
+                    console.error(`Error loading GeoTIFF for map ${mapId}:`, error);
+                });
 
-      map.addLayer(layer);
-      map.fitBounds(layer.getBounds());
-    })
-    .catch(error => {
-      console.error('Error loading GeoTIFF:', error);
-    });
-</script>
-                
+            return map;
+        }
+
+        // Initialize both maps with different GeoTIFFs
+        initializeMap('map1', '../content/Prac9/COPERNICUS_POST_SAVI.tif');
+        initializeMap('map2', '../content/Prac9/Landsat8_EVI_Post.tif');
+        </script>
+
     </body>
 </html>
