@@ -109,6 +109,26 @@
                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
                 background-color: whitesmoke;
             }
+
+            .download-button {
+                background-color: transparent;
+                border: 2px solid white;
+                color: white;
+                padding: 10px 30px;
+                font-size: 1rem;
+                font-weight: bold;
+                text-transform: uppercase;
+                cursor: pointer;
+                border-radius: 50px;
+                transition: all 0.3s ease;
+                text-decoration: none;
+            }
+
+            .download-button:hover {
+                background-color: #1abc9c;
+                color: white;
+                border-color: transparent;
+            }
         </style>
     </head>
     <body id="home">
@@ -136,6 +156,7 @@
         <!-- Viewer -->
         <div class="viewer">
             <h1>Práctica 7</h1>
+            <a href="../content/Prac7/practica7.ipynb" class="download-button" download>Descargar Notebook</a>
             <div class="row">
                 <!-- Display Image -->
                 <img src="../content/Prac7/Grafica.jpg" alt="Grafico de la practica 7">

@@ -94,6 +94,26 @@
                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
                 background-color: whitesmoke;
             }
+
+            .download-button {
+                background-color: transparent;
+                border: 2px solid white;
+                color: white;
+                padding: 10px 30px;
+                font-size: 1rem;
+                font-weight: bold;
+                text-transform: uppercase;
+                cursor: pointer;
+                border-radius: 50px;
+                transition: all 0.3s ease;
+                text-decoration: none;
+            }
+
+            .download-button:hover {
+                background-color: #1abc9c;
+                color: white;
+                border-color: transparent;
+            }
         </style>
     </head>
     <body id="home">
@@ -121,6 +141,7 @@
         <!-- Viewer -->
         <div class="viewer">
             <h1>Práctica 8</h1>
+            <a href="../content/Prac8/practica8.ipynb" class="download-button" download>Descargar Notebook</a>
             <!-- Display HTMLs in Column -->
             <iframe src="../content/Prac8/Accidentes.html" allowfullscreen></iframe>
             <iframe src="../content/Prac8/contenedores.html" allowfullscreen></iframe>
